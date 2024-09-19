@@ -1,25 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Biographie et parcours du joueur Chancel Mbemba">
-    <title>Chancel Mbemba - Biographie et Parcours</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
+<!DOCT
             margin: 20px;
             padding: 20px;
             background-color: #fff;
@@ -73,7 +53,7 @@
 
     <section>
         <h2>Galerie</h2>
-        <img src="chancel-mbemba.jpg" alt="Photo de Chancel Mbemba">
+        <img src="https://pictures.laprovence.com/cdn-cgi/image/width=1920,format=auto,quality=80,trim.left=0,trim.top=0,trim.height=1012,trim.width=1800/media/hermes/20240210/20240210_1_7_1_1_0_obj29050060_1.jpg" alt="Photo de Chancel Mbemba">
     </section>
 
     <footer>
