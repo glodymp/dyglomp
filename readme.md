@@ -53,7 +53,7 @@
 
     <section>
         <h2>Galerie</h2>
-        <img src="https://pictures.laprovence.com/cdn-cgi/image/width=1920,format=auto,quality=80,trim.left=0,trim.top=0,trim.height=1012,trim.width=1800/media/hermes/20240210/20240210_1_7_1_1_0_obj29050060_1.jpg" alt="Photo de Chancel Mbemba">
+        <img width="200"https://pictures.laprovence.com/cdn-cgi/image/width=1920,format=auto,quality=80,trim.left=0,trim.top=0,trim.height=1012,trim.width=1800/media/hermes/20240210/20240210_1_7_1_1_0_obj29050060_1.jpg" alt="Photo de Chancel Mbemba">
     </section>
 
     <footer>
