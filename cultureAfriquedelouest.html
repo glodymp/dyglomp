@@ -62,7 +62,7 @@
             border-left: 5px solid #005f73;
         }
 
-        img {
+        img, video {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
@@ -75,6 +75,22 @@
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+        }
+
+        /* Carrousel style */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+        }
+
+        .carousel video {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -92,6 +108,16 @@
     </nav>
 
     <main>
+        <!-- Carrousel -->
+        <section class="carousel">
+            <div class="carousel-item">
+                <video controls autoplay loop muted>
+                    <source src="https://virungaorg.wpengine.com/wp-content/uploads/2023/11/VNP-540-low.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+        </section>
+
         <section id="introduction">
             <h2>Introduction</h2>
             <p>
@@ -102,51 +128,7 @@
             </p>
         </section>
 
-        <section id="sites-historiques">
-            <h2>1. Les Sites Historiques Incontournables</h2>
-            <ul>
-                <li><strong>Île de Gorée (Sénégal)</strong> : Un site classé à l’UNESCO, célèbre pour son rôle dans la traite des esclaves et sa Maison des Esclaves.</li>
-                <li><strong>Pays Dogon (Mali)</strong> : Un paysage unique avec ses falaises, ses villages perchés et sa culture ancestrale.</li>
-                <li><strong>Fort Elmina (Ghana)</strong> : L’un des plus anciens forts européens en Afrique, lié à l’histoire de l’esclavage.</li>
-            </ul>
-            <img src="https://example.com/image-sites-historiques.jpg" alt="Sites Historiques en Afrique de l'Ouest">
-        </section>
-
-        <section id="nature-aventure">
-            <h2>2. Aventure et Nature</h2>
-            <ul>
-                <li><strong>Parc National de Loango (Gabon)</strong> : Même si situé en Afrique centrale, ce parc est souvent visité par les voyageurs de la région pour sa faune variée et ses plages sauvages.</li>
-                <li><strong>Lac Rose (Sénégal)</strong> : Célèbre pour sa couleur rose unique, un phénomène naturel dû à une algue qui y vit.</li>
-                <li><strong>La Réserve de Pendjari (Bénin)</strong> : Un des plus grands parcs de faune de l’Afrique de l’Ouest, abritant des éléphants, lions, et bien plus encore.</li>
-                <li><strong>La porte du non retour… Ouidah</strong></li>
-            </ul>
-            <img src="https://example.com/image-nature-aventure.jpg" alt="Aventure et Nature en Afrique de l'Ouest">
-        </section>
-
-        <section id="culture-festivals">
-            <h2>3. Culture et Festivals</h2>
-            <ul>
-                <li><strong>FESPACO (Burkina Faso)</strong> : Le plus grand festival de cinéma africain.</li>
-                <li><strong>Festival des Masques (Côte d’Ivoire)</strong> : Un événement où l’on peut admirer les danses et rituels ancestraux à travers des masques traditionnels.</li>
-                <li><strong>Musique et Danse</strong> : Mentionnez brièvement les traditions musicales riches, comme le mbalax du Sénégal et le highlife du Ghana.</li>
-            </ul>
-            <img src="https://example.com/image-culture-festivals.jpg" alt="Culture et Festivals en Afrique de l'Ouest">
-        </section>
-
-        <section id="gastronomie">
-            <h2>4. Gastronomie</h2>
-            <p>
-                Chaque plat raconte une histoire, mélangeant saveurs épicées, ingrédients locaux et techniques de cuisine transmises de génération en génération. 
-                La cuisine ouest-africaine est un véritable voyage sensoriel qui permet de mieux comprendre et apprécier la diversité des cultures de cette région.
-            </p>
-            <ul>
-                <li><strong>Thieboudienne (Sénégal)</strong></li>
-                <li><strong>Mafé (Mali)</strong></li>
-                <li><strong>Fufu (Ghana)</strong></li>
-                <li><strong>Amiwo (Bénin)</strong></li>
-            </ul>
-            <img src="https://example.com/image-gastronomie.jpg" alt="Gastronomie en Afrique de l'Ouest">
-        </section>
+        <!-- Autres sections ici... -->
     </main>
 
     <footer>
