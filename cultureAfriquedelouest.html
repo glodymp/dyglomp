@@ -4,137 +4,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez les meilleurs sites touristiques de l'Afrique de l'Ouest.">
-    <title>Meilleurs Sites Touristiques en Afrique de l’Ouest</title>
+    <title>Sites Touristiques Emblématiques en Afrique</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset de base */
+        body, h1, h2, h3, p, ul, li, a {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
 
-        header {
-            background-color: #005f73;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #0a9396;
-            text-align: center;
-            padding: 10px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        h1, h2 {
-            color: #005f73;
-        }
-
-        p {
+        /* Corps de la page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            background-color: #1b1b1b;
             line-height: 1.6;
         }
 
-        section {
+        /* En-tête */
+        header {
+            background-color: #000;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-menu li {
+            margin: 0 20px;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #ffdd00; /* Couleur accent inspirée */
+        }
+
+        /* Bannière principale */
+        .hero {
+            background: url('virunga-banner.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ffdd00; /* Couleur de contraste */
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .btn-explore {
+            padding: 10px 30px;
+            background-color: #ffdd00;
+            color: #000;
+            text-transform: uppercase;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-explore:hover {
+            background-color: #e5c900;
+        }
+
+        /* Section Explicative */
+        .about {
+            padding: 60px 20px;
+            background-color: #1b1b1b;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffdd00;
+        }
+
+        .about p {
+            font-size: 1.2em;
+        }
+
+        /* Galerie */
+        .gallery {
+            padding: 60px 20px;
+            background-color: #0e0e0e;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            color: #ffdd00;
             margin-bottom: 40px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        ul li {
-            background-color: #e9d8a6;
-            margin: 5px 0;
-            padding: 10px;
-            border-left: 5px solid #005f73;
-        }
-
-        img, video {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        footer {
-            background-color: #005f73;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-
-        /* Carrousel style */
-        .carousel {
-            display: flex;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .carousel-item {
-            flex: 0 0 100%;
-        }
-
-        .carousel video {
+        .grid img {
             width: 100%;
             height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Vidéos */
+        .videos {
+            background-color: #1b1b1b;
+            padding: 60px 20px;
+        }
+
+        .videos h2 {
+            color: #ffdd00;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .videos video {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: 0 auto 30px;
+            border: 5px solid #ffdd00;
+            border-radius: 10px;
+        }
+
+        /* Carte Interactive */
+        .map {
+            padding: 60px 20px;
+            background-color: #0e0e0e;
+        }
+
+        .map h2 {
+            color: #ffdd00;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Formulaire de Contact */
+        #contact {
+            background-color: #1b1b1b;
+            padding: 60px 20px;
+        }
+
+        #contact h2 {
+            color: #ffdd00;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffdd00;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #0e0e0e;
+            border: none;
+            color: #fff;
+            border-bottom: 2px solid #ffdd00;
+        }
+
+        #contact button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ffdd00;
+            color: #000;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contact button:hover {
+            background-color: #e5c900;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .socials a {
+            color: #ffdd00;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            color: #e5c900;
         }
     </style>
 </head>
 <body>
+    <!-- En-tête -->
     <header>
-        <h1>Meilleurs Sites Touristiques en Afrique de l’Ouest</h1>
+        <nav>
+            <img src="logo.png" alt="Logo" class="logo">
+            <ul class="nav-menu">
+                <li><a href="#">Accueil</a></li>
+                <li>
+                    <a href="#">Pays</a>
+                    <ul class="submenu">
+                        <li><a href="#">Sénégal</a></li>
+                        <li><a href="#">Bénin</a></li>
+                        <li><a href="#">Congo RDC</a></li>
+                        <li><a href="#">Kenya</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Explorer</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#sites-historiques">Sites Historiques</a>
-        <a href="#nature-aventure">Aventure & Nature</a>
-        <a href="#culture-festivals">Culture & Festivals</a>
-        <a href="#gastronomie">Gastronomie</a>
-    </nav>
+    <!-- Bannière Principale -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Découvrez les sites emblématiques en Afrique</h1>
+            <p>Explorez les merveilles cachées de l'Afrique de l'Ouest, de l'Est et Centrale.</p>
+            <a href="#explorer" class="btn-explore">Explorer Maintenant</a>
+        </div>
+    </section>
 
-    <main>
-        <!-- Carrousel -->
-        <section class="carousel">
-            <div class="carousel-item">
-                <video controls autoplay loop muted>
-                    <source src="https://virungaorg.wpengine.com/wp-content/uploads/2023/11/VNP-540-low.mp4" type="video/mp4">
-                    <video autoplay="" muted="" loop="" playsinline="">
-                <source src="https://virungaorg.wpengine.com/wp-content/uploads/2023/11/VNP-540-low.mp4" type="video/mp4">
-            </video>
-                </video>
+    <!-- Section Texte Explicatif -->
+    <section class="about">
+        <div class="container">
+            <h2>À la découverte de l'Afrique</h2>
+            <p>Des plages ensoleillées du Sénégal aux montagnes majestueuses du Kenya, explorez la diversité des paysages africains.</p>
+        </div>
+    </section>
+
+    <!-- Galerie d'Images -->
+    <section class="gallery">
+        <div class="container">
+            <h2>Galerie de Sites</h2>
+            <div class="grid">
+                <img src="senegal.jpg" alt="Sénégal">
+                <img src="benin.jpg" alt="Bénin">
+                <img src="congo.jpg" alt="Congo RDC">
+                <img src="kenya.jpg" alt="Kenya">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>
-                L’Afrique de l’Ouest est une région riche en histoire, en culture et en biodiversité. 
-                De ses plages paradisiaques à ses parcs naturels préservés, en passant par ses sites historiques marquants, 
-                cette partie du continent offre une multitude de trésors à découvrir. Que vous soyez amateur de nature, d’aventure ou passionné de patrimoine, 
-                l’Afrique de l’Ouest saura vous séduire par la diversité de ses paysages et la richesse de ses traditions.
-            </p>
-        </section>
+    <!-- Vidéos de Présentation -->
+    <section class="videos">
+        <div class="container">
+            <h2>Vidéos de Présentation</h2>
+            <video controls src="video-senegal.mp4"></video>
+            <video controls src="video-benin.mp4"></video>
+            <video controls src="video-congo.mp4"></video>
+            <video controls src="video-kenya.mp4"></video>
+        </div>
+    </section>
 
-        <!-- Autres sections ici... -->
-    </main>
+    <!-- Section Carte Interactive -->
+    <section class="map">
+        <div class="container">
+            <h2>Carte Interactive</h2>
+            <div id="map"></div>
+        </div>
+    </section>
 
+    <!-- Formulaire de Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <form action="submit.php">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pied de Page -->
     <footer>
-        <p>&copy; 2024 Meilleurs Sites Touristiques en Afrique de l’Ouest | Tous droits réservés</p>
+        <p>&copy; 2024 Sites Touristiques Emblématiques en Afrique. Tous droits réservés.</p>
+        <div class="socials">
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        </div>
     </footer>
 </body>
 </html>
