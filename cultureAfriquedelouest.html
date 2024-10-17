@@ -5,80 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sites Touristiques Emblématiques en Afrique</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Reset de base */
-        body, h1, h2, h3, p, ul, li, a {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Corps de la page */
         body {
             font-family: 'Poppins', sans-serif;
             color: #ffffff;
             background-color: #1b1b1b;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
-        /* En-tête */
-        header {
-            background-color: #000;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        .nav-menu li {
-            margin: 0 20px;
-        }
-
-        .nav-menu a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover {
-            color: #ffdd00; /* Couleur accent inspirée */
-        }
-
-        /* Bannière principale */
+        /* Full-screen hero with video as background */
         .hero {
-            background: url('virunga-banner.jpg') no-repeat center center/cover;
+            position: relative;
             height: 100vh;
+            background: url('virunga-banner.jpg') no-repeat center center/cover;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3; /* Filigrane effet */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
         .hero-content h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
-            color: #ffdd00; /* Couleur de contraste */
-        }
-
-        .hero-content p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
+            color: #ffdd00;
         }
 
         .btn-explore {
-            padding: 10px 30px;
-            background-color: #ffdd00;
-            color: #000;
+            padding: 15px 30px;
+            background-color: #ff7b00;
+            color: #fff;
             text-transform: uppercase;
             border: none;
             font-weight: bold;
@@ -90,135 +66,57 @@
             background-color: #e5c900;
         }
 
-        /* Section Explicative */
-        .about {
-            padding: 60px 20px;
-            background-color: #1b1b1b;
-            text-align: center;
+        /* Tabs styling */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+            padding: 15px 0;
         }
 
-        .about h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ffdd00;
-        }
-
-        .about p {
-            font-size: 1.2em;
-        }
-
-        /* Galerie */
-        .gallery {
-            padding: 60px 20px;
-            background-color: #0e0e0e;
-        }
-
-        .gallery h2 {
-            text-align: center;
-            color: #ffdd00;
-            margin-bottom: 40px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .grid img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Vidéos */
-        .videos {
-            background-color: #1b1b1b;
-            padding: 60px 20px;
-        }
-
-        .videos h2 {
-            color: #ffdd00;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .videos video {
-            width: 100%;
-            max-width: 700px;
-            display: block;
-            margin: 0 auto 30px;
-            border: 5px solid #ffdd00;
-            border-radius: 10px;
-        }
-
-        /* Carte Interactive */
-        .map {
-            padding: 60px 20px;
-            background-color: #0e0e0e;
-        }
-
-        .map h2 {
-            color: #ffdd00;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        /* Formulaire de Contact */
-        #contact {
-            background-color: #1b1b1b;
-            padding: 60px 20px;
-        }
-
-        #contact h2 {
-            color: #ffdd00;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        #contact form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        #contact label {
-            display: block;
-            margin-bottom: 5px;
-            color: #ffdd00;
-        }
-
-        #contact input, #contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: #0e0e0e;
-            border: none;
+        .tabs button {
+            background: none;
             color: #fff;
-            border-bottom: 2px solid #ffdd00;
-        }
-
-        #contact button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #ffdd00;
-            color: #000;
-            text-transform: uppercase;
+            padding: 15px 30px;
             border: none;
             cursor: pointer;
+            font-size: 1.2em;
+            text-transform: uppercase;
             transition: background-color 0.3s;
         }
 
-        #contact button:hover {
-            background-color: #e5c900;
+        .tabs button:hover, .tabs button.active {
+            background-color: #ff7b00;
         }
 
-        /* Pied de page */
+        /* Content Sections */
+        .country-content {
+            display: none;
+            padding: 40px 20px;
+            background-color: #1b1b1b;
+            text-align: center;
+        }
+
+        .country-content.active {
+            display: block;
+        }
+
+        .country-content h2 {
+            margin-bottom: 20px;
+            color: #ffdd00;
+        }
+
+        .country-content p {
+            margin-bottom: 30px;
+        }
+
+        .country-content img, .country-content video {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
         footer {
             background-color: #000;
             color: #fff;
@@ -226,113 +124,103 @@
             padding: 20px 0;
         }
 
-        .socials a {
+        .footer .socials a {
             color: #ffdd00;
             margin: 0 10px;
             text-decoration: none;
         }
 
-        .socials a:hover {
+        .footer .socials a:hover {
             color: #e5c900;
         }
     </style>
 </head>
 <body>
-    <!-- En-tête -->
-    <header>
-        <nav>
-            <img src="logo.png" alt="Logo" class="logo">
-            <ul class="nav-menu">
-                <li><a href="#">Accueil</a></li>
-                <li>
-                    <a href="#">Pays</a>
-                    <ul class="submenu">
-                        <li><a href="#">Sénégal</a></li>
-                        <li><a href="#">Bénin</a></li>
-                        <li><a href="#">Congo RDC</a></li>
-                        <li><a href="#">Kenya</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Explorer</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Bannière Principale -->
+    <!-- Hero Section with Video as Background -->
     <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="https://virungaorg.wpengine.com/wp-content/uploads/2023/11/VNP-540-low.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
-            <h1>Découvrez les sites emblématiques en Afrique</h1>
-            <p>Explorez les merveilles cachées de l'Afrique de l'Ouest, de l'Est et Centrale.</p>
+            <h1>Explorez la diversité de l'Afrique</h1>
             <a href="#explorer" class="btn-explore">Explorer Maintenant</a>
         </div>
     </section>
 
-    <!-- Section Texte Explicatif -->
-    <section class="about">
-        <div class="container">
-            <h2>À la découverte de l'Afrique</h2>
-            <p>Des plages ensoleillées du Sénégal aux montagnes majestueuses du Kenya, explorez la diversité des paysages africains.</p>
-        </div>
+    <!-- Country Tabs -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="showContent('benin')">Bénin</button>
+        <button class="tab-button" onclick="showContent('senegal')">Sénégal</button>
+        <button class="tab-button" onclick="showContent('kenya')">Kenya</button>
+        <button class="tab-button" onclick="showContent('afrique-sud')">Afrique du Sud</button>
+        <button class="tab-button" onclick="showContent('congo-rdc')">Congo RDC</button>
+    </div>
+
+    <!-- Content for each country -->
+    <section id="benin" class="country-content active">
+        <h2>Bénin</h2>
+        <p>Le Bénin est célèbre pour ses palais royaux et ses sites historiques liés au Royaume de Dahomey.</p>
+        <img src="https://example.com/benin-palace.jpg" alt="Palais Royal au Bénin">
+        <video controls>
+            <source src="https://example.com/benin-video.mp4" type="video/mp4">
+        </video>
     </section>
 
-    <!-- Galerie d'Images -->
-    <section class="gallery">
-        <div class="container">
-            <h2>Galerie de Sites</h2>
-            <div class="grid">
-                <img src="senegal.jpg" alt="Sénégal">
-                <img src="benin.jpg" alt="Bénin">
-                <img src="congo.jpg" alt="Congo RDC">
-                <img src="kenya.jpg" alt="Kenya">
-            </div>
-        </div>
+    <section id="senegal" class="country-content">
+        <h2>Sénégal</h2>
+        <p>Découvrez l'île de Gorée et le parc national du Djoudj, des merveilles de la nature et de l'histoire.</p>
+        <img src="https://example.com/goree-island.jpg" alt="Île de Gorée">
+        <video controls>
+            <source src="https://example.com/senegal-video.mp4" type="video/mp4">
+        </video>
     </section>
 
-    <!-- Vidéos de Présentation -->
-    <section class="videos">
-        <div class="container">
-            <h2>Vidéos de Présentation</h2>
-            <video controls src="video-senegal.mp4"></video>
-            <video controls src="video-benin.mp4"></video>
-            <video controls src="video-congo.mp4"></video>
-            <video controls src="video-kenya.mp4"></video>
-        </div>
+    <section id="kenya" class="country-content">
+        <h2>Kenya</h2>
+        <p>Le Kenya est connu pour ses safaris exceptionnels et le parc national du Maasai Mara.</p>
+        <img src="https://example.com/masai-mara.jpg" alt="Parc National du Maasai Mara">
+        <video controls>
+            <source src="https://example.com/kenya-video.mp4" type="video/mp4">
+        </video>
     </section>
 
-    <!-- Section Carte Interactive -->
-    <section class="map">
-        <div class="container">
-            <h2>Carte Interactive</h2>
-            <div id="map"></div>
-        </div>
+    <section id="afrique-sud" class="country-content">
+        <h2>Afrique du Sud</h2>
+        <p>Découvrez le Cap de Bonne-Espérance et la diversité vibrante de Johannesburg.</p>
+        <img src="https://example.com/cape-of-good-hope.jpg" alt="Cap de Bonne-Espérance">
+        <video controls>
+            <source src="https://example.com/south-africa-video.mp4" type="video/mp4">
+        </video>
     </section>
 
-    <!-- Formulaire de Contact -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contactez-nous</h2>
-            <form action="submit.php">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
+    <section id="congo-rdc" class="country-content">
+        <h2>Congo RDC</h2>
+        <p>Explorez le Parc National de Virunga, un trésor de biodiversité en Afrique centrale.</p>
+        <img src="https://example.com/virunga-park.jpg" alt="Parc National de Virunga">
+        <video controls>
+            <source src="https://example.com/congo-video.mp4" type="video/mp4">
+        </video>
     </section>
 
-    <!-- Pied de Page -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Sites Touristiques Emblématiques en Afrique. Tous droits réservés.</p>
         <div class="socials">
             <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
         </div>
     </footer>
+
+    <script>
+        function showContent(countryId) {
+            const contents = document.querySelectorAll('.country-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(countryId).classList.add('active');
+            document.querySelector(`.tabs button[onclick="showContent('${countryId}')"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
