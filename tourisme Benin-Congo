@@ -4,153 +4,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez les meilleurs sites touristiques de l'Afrique de l'Ouest.">
-    <title>Meilleurs Sites Touristiques en Afrique de l’Ouest</title>
+    <title>Sites Touristiques Emblématiques en Afrique</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            background-color: #1b1b1b;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
 
-        header {
-            background-color: #005f73;
-            color: white;
+        /* Full-screen hero with video as background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('virunga-banner.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 20px;
+            overflow: hidden;
         }
 
-        nav {
-            background-color: #0a9396;
-            text-align: center;
-            padding: 10px;
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3; /* Filigrane effet */
+            z-index: 1;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em; /* Taille réduite */
+            margin-bottom: 20px;
+            color: #ffdd00;
+        }
+
+        .btn-explore {
+            padding: 15px 30px;
+            background-color: #ff7b00;
+            color: #fff;
+            text-transform: uppercase;
+            border: none;
             font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        main {
-            padding: 20px;
+        .btn-explore:hover {
+            background-color: #e5c900;
         }
 
-        h1, h2 {
-            color: #005f73;
+        /* Tabs styling */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+            padding: 15px 0;
         }
 
-        p {
-            line-height: 1.6;
+        .tabs button {
+            background: none;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
         }
 
-        section {
-            margin-bottom: 40px;
+        .tabs button:hover, .tabs button.active {
+            background-color: #ff7b00;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            background-color: #e9d8a6;
-            margin: 5px 0;
-            padding: 10px;
-            border-left: 5px solid #005f73;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        footer {
-            background-color: #005f73;
-            color: white;
+        /* Content Sections */
+        .section-content {
+            display: none;
+            padding: 40px 20px;
+            background-color: #1b1b1b;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        .section-content h2 {
+            margin-bottom: 20px;
+            color: #ffdd00;
+        }
+
+        .section-content p {
+            margin-bottom: 30px;
+        }
+
+        .section-content img, .section-content video {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer .socials a {
+            color: #ffdd00;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer .socials a:hover {
+            color: #e5c900;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Meilleurs Sites Touristiques en Afrique de l’Ouest</h1>
-    </header>
+    <!-- Hero Section with Video as Background -->
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="https://virungaorg.wpengine.com/wp-content/uploads/2023/11/VNP-540-low.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Explorez les sites touristiques emblématiques de l'Afrique</h1>
+        </div>
+    </section>
 
-    <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#sites-historiques">Sites Historiques</a>
-        <a href="#nature-aventure">Aventure & Nature</a>
-        <a href="#culture-festivals">Culture & Festivals</a>
-        <a href="#gastronomie">Gastronomie</a>
-    </nav>
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="showContent('accueil')">Accueil</button>
+        <button class="tab-button" onclick="showContent('art-culture')">Art et Culture</button>
+        <button class="tab-button" onclick="showContent('blog')">Blog</button>
+        <button class="tab-button" onclick="showContent('nous-contacter')">Nous contacter</button>
+    </div>
 
-    <main>
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>
-                L’Afrique de l’Ouest est une région riche en histoire, en culture et en biodiversité. 
-                De ses plages paradisiaques à ses parcs naturels préservés, en passant par ses sites historiques marquants, 
-                cette partie du continent offre une multitude de trésors à découvrir. Que vous soyez amateur de nature, d’aventure ou passionné de patrimoine, 
-                l’Afrique de l’Ouest saura vous séduire par la diversité de ses paysages et la richesse de ses traditions.
-            </p>
-        </section>
+    <!-- Content for each section -->
+    <section id="accueil" class="section-content active">
+   
+        <!-- Bénin -->
+        <h3>Bénin : Palais Royal de Abomey</h3>
+        <p>Les palais royaux d'Abomey sont un ensemble de palais historiques représentant le pouvoir du royaume de Dahomey.</p>
+        <img src="https://example.com/benin-palace.jpg" alt="Palais Royal au Bénin">
+        <video controls>
+            <source src="https://example.com/benin-video.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Congo -->
+        <h3>Congo : Parc National de Virunga</h3>
+        <p>Le Parc National de Virunga est l'une des plus anciennes réserves naturelles d'Afrique, abritant les célèbres gorilles de montagne.</p>
+        <img src="https://example.com/virunga-park.jpg" alt="Parc National de Virunga">
+        <video controls>
+            <source src="https://youtu.be/0Xl0mlT3gU4" type="video/mp4">
+        </video>
+        
+        <!-- Gabon -->
+        <h3>Gabon : Parc National de Loango</h3>
+        <p>Le Parc National de Loango est connu pour sa biodiversité exceptionnelle, allant des plages aux forêts tropicales.</p>
+        <img src="https://example.com/loango-park.jpg" alt="Parc National de Loango">
+        <video controls>
+            <source src="https://example.com/gabon-video.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Sénégal -->
+        <h3>Sénégal : Île de Gorée</h3>
+        <p>L'île de Gorée est un symbole important de la mémoire de la traite négrière et abrite de nombreux musées historiques.</p>
+        <img src="https://example.com/goree-island.jpg" alt="Île de Gorée">
+        <video controls>
+            <source src="https://example.com/senegal-video.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Kenya -->
+        <h3>Kenya : Parc National du Maasai Mara</h3>
+        <p>Le Maasai Mara est célèbre pour ses safaris et la grande migration des gnous.</p>
+        <img src="https://example.com/masai-mara.jpg" alt="Parc National du Maasai Mara">
+        <video controls>
+            <source src="https://example.com/kenya-video.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Afrique du Sud -->
+        <h3>Afrique du Sud : Constitution Hill</h3>
+        <p>Constitution Hill est une ancienne prison où Nelson Mandela et d'autres figures emblématiques ont été incarcérées. Aujourd'hui, c'est un musée présentant des cellules historiques et les écrits de Mandela.</p>
+        <img src="https://example.com/constitution-hill.jpg" alt="Constitution Hill, Afrique du Sud">
+        <video controls>
+            <source src="https://example.com/south-africa-video.mp4" type="video/mp4">
+        </video>
+    </section>
 
-        <section id="sites-historiques">
-            <h2>1. Les Sites Historiques Incontournables</h2>
-            <ul>
-                <li><strong>Île de Gorée (Sénégal)</strong> : Un site classé à l’UNESCO, célèbre pour son rôle dans la traite des esclaves et sa Maison des Esclaves.</li>
-                <li><strong>Pays Dogon (Mali)</strong> : Un paysage unique avec ses falaises, ses villages perchés et sa culture ancestrale.</li>
-                <li><strong>Fort Elmina (Ghana)</strong> : L’un des plus anciens forts européens en Afrique, lié à l’histoire de l’esclavage.</li>
-            </ul>
-            <img src="https://example.com/image-sites-historiques.jpg" alt="Sites Historiques en Afrique de l'Ouest">
-        </section>
+    <section id="art-culture" class="section-content">
+        <h2>Art et Culture</h2>
+        <p>Découvrez la richesse artistique et culturelle de l'Afrique à travers ses festivals, musées, et traditions.</p>
+    </section>
 
-        <section id="nature-aventure">
-            <h2>2. Aventure et Nature</h2>
-            <ul>
-                <li><strong>Parc National de Loango (Gabon)</strong> : Même si situé en Afrique centrale, ce parc est souvent visité par les voyageurs de la région pour sa faune variée et ses plages sauvages.</li>
-                <li><strong>Lac Rose (Sénégal)</strong> : Célèbre pour sa couleur rose unique, un phénomène naturel dû à une algue qui y vit.</li>
-                <li><strong>La Réserve de Pendjari (Bénin)</strong> : Un des plus grands parcs de faune de l’Afrique de l’Ouest, abritant des éléphants, lions, et bien plus encore.</li>
-                <li><strong>La porte du non retour… Ouidah</strong></li>
-            </ul>
-            <img src="https://example.com/image-nature-aventure.jpg" alt="Aventure et Nature en Afrique de l'Ouest">
-        </section>
+    <section id="blog" class="section-content">
+        <h2>Blog</h2>
+        <p>Restez informé avec nos articles de blog sur les meilleures destinations, conseils de voyage et plus encore.</p>
+    </section>
 
-        <section id="culture-festivals">
-            <h2>3. Culture et Festivals</h2>
-            <ul>
-                <li><strong>FESPACO (Burkina Faso)</strong> : Le plus grand festival de cinéma africain.</li>
-                <li><strong>Festival des Masques (Côte d’Ivoire)</strong> : Un événement où l’on peut admirer les danses et rituels ancestraux à travers des masques traditionnels.</li>
-                <li><strong>Musique et Danse</strong> : Mentionnez brièvement les traditions musicales riches, comme le mbalax du Sénégal et le highlife du Ghana.</li>
-            </ul>
-            <img src="https://example.com/image-culture-festivals.jpg" alt="Culture et Festivals en Afrique de l'Ouest">
-        </section>
+    <section id="a-propos" class="section-content">
+        <h2>À propos</h2>
+        <p>En savoir plus sur notre mission et notre équipe.</p>
+    </section>
 
-        <section id="gastronomie">
-            <h2>4. Gastronomie</h2>
-            <p>
-                Chaque plat raconte une histoire, mélangeant saveurs épicées, ingrédients locaux et techniques de cuisine transmises de génération en génération. 
-                La cuisine ouest-africaine est un véritable voyage sensoriel qui permet de mieux comprendre et apprécier la diversité des cultures de cette région.
-            </p>
-            <ul>
-                <li><strong>Thieboudienne (Sénégal)</strong></li>
-                <li><strong>Mafé (Mali)</strong></li>
-                <li><strong>Fufu (Ghana)</strong></li>
-                <li><strong>Amiwo (Bénin)</strong></li>
-            </ul>
-            <img src="https://example.com/image-gastronomie.jpg" alt="Gastronomie en Afrique de l'Ouest">
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Meilleurs Sites Touristiques en Afrique de l’Ouest | Tous droits réservés</p>
+        <p>&copy; 2024 Sites Touristiques Emblématiques en Afrique. Tous droits réservés.</p>
+        <div class="socials">
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        </div>
     </footer>
+
+    <script>
+        function showContent(sectionId) {
+            const contents = document.querySelectorAll('.section-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelector(`.tabs button[onclick="showContent('${sectionId}')"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
